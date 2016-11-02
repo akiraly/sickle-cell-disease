@@ -4,10 +4,18 @@ public class Individual {
   private final SCDLevel scdLevel;
 
   public Individual() {
-    this(SCDLevel.NotInfected);
+    this(SCDLevel.Healthy);
   }
 
   public Individual(SCDLevel scdLevel) {
     this.scdLevel = scdLevel;
+  }
+
+  public int numOfOffsprings(int def) {
+    return scdLevel.numOfOffsprings(def);
+  }
+
+  public SCDLevel getScdLevel() {
+    return scdLevel;
   }
 }
