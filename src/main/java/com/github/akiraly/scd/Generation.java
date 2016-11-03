@@ -18,4 +18,8 @@ public class Generation {
         (l, count) -> count != null ? ++count : 1));
     return new GenerationSCDStats(Collections.unmodifiableMap(bySCDLevel));
   }
+
+  public Set<Individual> getIndividuals() {
+    return individuals;
+  }
 }

@@ -8,15 +8,5 @@ package com.github.akiraly.scd;
 public enum SCDLevel {
   Healthy,
   Carrier, // SCT
-  Infected { // SCD
-
-    @Override
-    public int numOfOffsprings(int def) {
-      return 0;
-    }
-  };
-
-  public int numOfOffsprings(int def) {
-    return def;
-  }
+  Infected // SCD
 }

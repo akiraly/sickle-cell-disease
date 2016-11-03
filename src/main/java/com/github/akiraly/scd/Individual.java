@@ -11,10 +11,6 @@ public class Individual {
     this.scdLevel = scdLevel;
   }
 
-  public int numOfOffsprings(int def) {
-    return scdLevel.numOfOffsprings(def);
-  }
-
   public SCDLevel getScdLevel() {
     return scdLevel;
   }
