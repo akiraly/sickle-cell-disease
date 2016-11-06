@@ -33,7 +33,7 @@ class GenerationIterator {
             carrierOffspringCountMultiplier, infectedOffspringCountMultiplier),
         MoreExecutors.listeningDecorator(
             Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors(),
-            new ThreadFactoryBuilder().setDaemon(true).setNameFormat("gen-iterator-%d").build())));
+                new ThreadFactoryBuilder().setDaemon(true).setNameFormat("gen-iterator-%d").build())));
   }
 
   private GenerationIterator(OffspringFactory offspringFactory,
