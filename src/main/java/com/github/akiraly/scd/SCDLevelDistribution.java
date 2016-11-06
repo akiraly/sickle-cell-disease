@@ -12,7 +12,7 @@ import org.apache.commons.math3.random.RandomGenerator;
  */
 class SCDLevelDistribution extends DistributionBasedRandom<SCDLevel> {
   SCDLevelDistribution(RandomGenerator randomGenerator) {
-    this(randomGenerator, 0.000312, 0.4); // 0.009346);
+    this(randomGenerator, 0.000312, 0.009346);
   }
 
   private SCDLevelDistribution(RandomGenerator randomGenerator, double infectedRatio, double carrierRatio) {
