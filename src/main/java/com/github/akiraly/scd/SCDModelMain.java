@@ -1,7 +1,14 @@
 package com.github.akiraly.scd;
 
+import org.apache.commons.math3.random.RandomGenerator;
+import org.apache.commons.math3.random.RandomGeneratorFactory;
+
+import java.security.SecureRandom;
+
 public class SCDModelMain {
+  private static final RandomGenerator RANDOM_GENERATOR = RandomGeneratorFactory.createRandomGenerator(new SecureRandom());
+
   public static void main(String[] args) {
-    new SCDModel().run();
+    new SCDModel(RANDOM_GENERATOR, 10_000, 20, 0.0f).run();
   }
 }

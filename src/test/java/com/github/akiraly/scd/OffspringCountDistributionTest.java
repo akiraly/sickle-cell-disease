@@ -14,7 +14,7 @@ public class OffspringCountDistributionTest {
   public void testNextNumOfChildren() throws Exception {
     Iterator<Double> randoms = FluentIterable.
         of(0.0, 0.1, 0.2, 0.3, 0.4, 0.2, 0.1, 0.8, 0.999).iterator();
-    OffspringCountDistribution d = new OffspringCountDistribution(new AbstractRandomGenerator() {
+    OffspringCountGenerator d = new OffspringCountGenerator(new AbstractRandomGenerator() {
       @Override
       public void setSeed(long seed) {
         throw new UnsupportedOperationException();
@@ -24,17 +24,17 @@ public class OffspringCountDistributionTest {
       public double nextDouble() {
         return randoms.next();
       }
-    });
+    }, 1f, 1f);
 
-    assertEquals(0, d.next().longValue());
-    assertEquals(0, d.next().longValue());
-    assertEquals(1, d.next().longValue());
-    assertEquals(2, d.next().longValue());
-    assertEquals(2, d.next().longValue());
-    assertEquals(1, d.next().longValue());
-    assertEquals(0, d.next().longValue());
-    assertEquals(4, d.next().longValue());
-    assertEquals(8, d.next().longValue());
+    assertEquals(0, d.nextOffspringCount(SCDLevel.Healthy).longValue());
+    assertEquals(0, d.nextOffspringCount(SCDLevel.Healthy).longValue());
+    assertEquals(1, d.nextOffspringCount(SCDLevel.Healthy).longValue());
+    assertEquals(2, d.nextOffspringCount(SCDLevel.Healthy).longValue());
+    assertEquals(2, d.nextOffspringCount(SCDLevel.Healthy).longValue());
+    assertEquals(1, d.nextOffspringCount(SCDLevel.Healthy).longValue());
+    assertEquals(0, d.nextOffspringCount(SCDLevel.Healthy).longValue());
+    assertEquals(4, d.nextOffspringCount(SCDLevel.Healthy).longValue());
+    assertEquals(8, d.nextOffspringCount(SCDLevel.Healthy).longValue());
   }
 
 }
